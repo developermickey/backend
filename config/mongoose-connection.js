@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
+const config = require('config');
+const dbug = require('debug')("development:mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/backend")
+
+mongoose
+.connect(`${config.get("MONGODB_URL")}/backend`)
 .then(function(){
-    console.log("connected");
+    dbug("connected");
 })
 .catch(function(err){
-    console.log(err);
+    dbug(err);
 })
 
 
