@@ -3,7 +3,10 @@ const app = express();
 const cookieParser = require("cookie-parser"); 
 const path = require("path");
 
+// Mongoose Configuration File 
 const db = require('./config/mongoose-connection');
+
+// Routes here
 const ownersRouter = require('./routes/ownersRouter');
 const usersRouter = require('./routes/usersRouter');
 const productsRouter = require('./routes/productsRouter');
